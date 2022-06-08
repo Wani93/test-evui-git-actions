@@ -2,7 +2,7 @@ const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/test-evui-git-actions/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/<repository name>/' : '/',
   outputDir: 'dist',
   devServer: {
     overlay: false,
