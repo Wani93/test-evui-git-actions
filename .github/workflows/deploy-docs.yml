@@ -5,7 +5,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     
     steps:
@@ -21,13 +21,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
       
-      - name: Build Docs  
+      - name: Build Docs
         run: npm run docs_build
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    
-    steps:    
+        
       - name: Deploy Docs
         uses: peaceiris/actions-gh-pages@v3
         with:
