@@ -68,7 +68,7 @@ a {
     left: 10px;
     width: 110px;
     height: 30px;
-    background: url('http://evui.ex-em.com/wp-content/uploads/2017/11/evui_1.png') left center no-repeat;
+    background: url('../assets/images/evui_logo.png') left center no-repeat;
     background-size: contain;
     transform: translateY(-50%);
 
