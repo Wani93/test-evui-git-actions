@@ -24,6 +24,7 @@ jobs:
       - name: Build Docs  
         run: npm run docs_build
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     
     steps:    
