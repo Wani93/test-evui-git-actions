@@ -3,8 +3,6 @@ name: Deploy Docs
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
   deploy:
@@ -24,7 +22,7 @@ jobs:
         run: npm install
       
       - name: Build Docs  
-      - run: npm run docs_build
+        run: npm run docs_build
     
       - name: Deploy Docs
         uses: peaceiris/actions-gh-pages@v3
