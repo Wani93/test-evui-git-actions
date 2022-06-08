@@ -1,4 +1,4 @@
-name: CI
+name: Deploy Docs
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     
     steps:
@@ -19,12 +19,15 @@ jobs:
       with:
         node-version: 12.x
         cache: 'npm'
-        
-    - run: npm install
-#     - run: npm run lint
-#     - run: npm run build
+    
+    - name: Install Dependencies
+      run: npm install
+      
+    - name: Build Docs  
     - run: npm run docs_build
-    - uses: peaceiris/actions-gh-pages@v3
+    
+    - name: Deploy Docs
+      uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GH_TOKEN }}
         publish_dir: ./dist
